@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const port = process.env.PORT || 3000;
 
 const app = express();
 const server = require("http").createServer(app);
@@ -20,6 +21,6 @@ io.on("connection", function(socket){
   })
 })
 
-server.listen(5000, () => {
-  console.log('Server running at port 5000');
+server.listen(port, () => {
+  console.log(`Server running at port ${port}`);
 });
